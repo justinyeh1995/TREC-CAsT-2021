@@ -1,0 +1,76 @@
+##Document Retrieval@1000
+utterances                                                                                                                
+                                                                                                                          
+map                     all     0.0425                                                                                    
+recall_1000             all     0.4519                                                                                    
+                                                                                                                          
+auto_queries-pred-bs3                                                                                                     
+                                                                                                                          
+map                     all     0.0852                                                                                    
+recall_1000             all     0.6987 
+auto_cano_queries-bs3                                                                                                     
+                                                                                                                          
+map                     all     0.1189                                                                                    
+recall_1000             all     0.7824                                                                                    
+                                                                                                                          
+queries_auto_cano                                                                                                         
+                                                                                                                          
+map                     all     0.1355                                                                                    
+recall_1000             all     0.8285                                                                                    
+                                                                                                                          
+queries_manu                                                                                                              
+                                                                                                                          
+map                     all     0.1686                                                                                    
+recall_1000             all     0.8452
+
+##Document Retireval@2000
+utterances
+
+map                     all     0.0425
+recall_2000             all     0.4854
+
+auto_queries-pred-bs3
+
+map                     all     0.0852
+recall_2000             all     0.7531
+
+auto_cano_queries-bs3
+
+map                     all     0.1189
+recall_2000             all     0.8201
+
+queries_auto_cano
+
+map                     all     0.1355
+recall_2000             all     0.8577
+
+queries_manu
+
+map                     all     0.1687
+recall_2000             all     0.8870
+
+
+##Document Retrieval@3000
+map                     all     0.0425
+recall_3000             all     0.5063
+
+auto_queries-pred-bs3
+
+map                     all     0.0853
+recall_3000             all     0.7950
+
+auto_cano_queries-bs3
+
+map                     all     0.1189
+recall_3000             all     0.8326
+
+queries_auto_cano
+
+map                     all     0.1355
+recall_3000             all     0.8787
+
+queries_manu
+
+map                     all     0.1687
+recall_3000             all     0.9121
+ 
