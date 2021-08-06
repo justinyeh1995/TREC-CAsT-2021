@@ -1,0 +1,74 @@
+HQE_expanded_queries
+
+map                   	all	0.0047
+recall_1000           	all	0.2427
+
+HQE_expanded_queries_pred_canard
+
+map                   	all	0.0029
+recall_1000           	all	0.1297
+
+HQE_expanded_queries
+
+map                   	all	0.0047
+recall_2000           	all	0.3013
+
+HQE_expanded_queries_pred_canard
+
+map                   	all	0.0029
+recall_2000           	all	0.1548
+
+HQE_expanded_queries
+
+map                   	all	0.0047
+recall_3000           	all	0.3222
+
+HQE_expanded_queries_pred_canard
+
+map                   	all	0.0029
+recall_3000           	all	0.1799
+
+HQE_expanded_queries
+
+map                   	all	0.0047
+recall_4000           	all	0.3766
+
+HQE_expanded_queries_pred_canard
+
+map                   	all	0.0029
+recall_4000           	all	0.2134
+
+HQE_expanded_queries
+
+map                   	all	0.0047
+recall_5000           	all	0.4100
+
+HQE_expanded_queries_pred_canard
+
+map                   	all	0.0030
+recall_5000           	all	0.2259
+
+utterances
+
+auto_queries-pred-bs3
+
+auto_cano_queries-bs3
+
+utterances
+
+auto_queries-pred-bs3
+
+auto_cano_queries-bs3
+
+queries_auto_cano
+
+queries_manu
+
+utterances
+
+auto_queries-pred-bs3
+
+auto_cano_queries-bs3
+
+queries_auto_cano
+

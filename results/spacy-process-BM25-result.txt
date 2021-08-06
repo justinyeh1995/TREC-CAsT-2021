@@ -1,0 +1,125 @@
+utterances
+
+map                   	all	0.0492
+recall_1000           	all	0.4728
+
+auto_queries-pred-bs3
+
+map                   	all	0.0966
+recall_1000           	all	0.6820
+
+auto_cano_queries-bs3
+
+map                   	all	0.1308
+recall_1000           	all	0.7741
+
+queries_auto_cano
+
+map                   	all	0.1479
+recall_1000           	all	0.8201
+
+queries_manu
+
+map                   	all	0.1739
+recall_1000           	all	0.8494
+
+utterances
+
+map                   	all	0.0493
+recall_2000           	all	0.5146
+
+auto_queries-pred-bs3
+
+map                   	all	0.0966
+recall_2000           	all	0.7448
+
+auto_cano_queries-bs3
+
+map                   	all	0.1308
+recall_2000           	all	0.8285
+
+queries_auto_cano
+
+map                   	all	0.1480
+recall_2000           	all	0.8577
+
+queries_manu
+
+map                   	all	0.1739
+recall_2000           	all	0.8828
+
+utterances
+
+map                   	all	0.0493
+recall_3000           	all	0.5356
+
+auto_queries-pred-bs3
+
+map                   	all	0.0966
+recall_3000           	all	0.7950
+
+auto_cano_queries-bs3
+
+map                   	all	0.1308
+recall_3000           	all	0.8410
+
+queries_auto_cano
+
+map                   	all	0.1480
+recall_3000           	all	0.8828
+
+queries_manu
+
+map                   	all	0.1739
+recall_3000           	all	0.8954
+
+utterances
+
+map                   	all	0.0493
+recall_4000           	all	0.5481
+
+auto_queries-pred-bs3
+
+map                   	all	0.0966
+recall_4000           	all	0.8075
+
+auto_cano_queries-bs3
+
+map                   	all	0.1308
+recall_4000           	all	0.8536
+
+queries_auto_cano
+
+map                   	all	0.1480
+recall_4000           	all	0.8828
+
+queries_manu
+
+map                   	all	0.1739
+recall_4000           	all	0.9205
+
+utterances
+
+map                   	all	0.0493
+recall_5000           	all	0.5690
+
+auto_queries-pred-bs3
+
+map                   	all	0.0966
+recall_5000           	all	0.8159
+
+auto_cano_queries-bs3
+
+map                   	all	0.1308
+recall_5000           	all	0.8536
+
+queries_auto_cano
+
+map                   	all	0.1480
+recall_5000           	all	0.8870
+
+queries_manu
+
+map                   	all	0.1739
+recall_5000           	all	0.9331
+

@@ -1,0 +1,25 @@
+utterances
+
+map                   	all	0.0357
+recall_1000           	all	0.4142
+
+auto_queries-pred-bs3
+
+map                   	all	0.0912
+recall_1000           	all	0.6611
+
+auto_cano_queries-bs3
+
+map                   	all	0.1398
+recall_1000           	all	0.7448
+
+queries_auto_cano
+
+map                   	all	0.1495
+recall_1000           	all	0.7950
+
+queries_manu
+
+map                   	all	0.1654
+recall_1000           	all	0.8075
+
