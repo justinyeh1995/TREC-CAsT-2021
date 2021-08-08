@@ -51,6 +51,8 @@ recall_2000             all     0.8870
 
 
 ##Document Retrieval@3000
+utterances
+
 map                     all     0.0425
 recall_3000             all     0.5063
 
@@ -74,3 +76,54 @@ queries_manu
 map                     all     0.1687
 recall_3000             all     0.9121
  
+##Document Retrieval@4000
+utterances
+
+map                   	all	0.0425
+recall_4000           	all	0.5230
+
+auto_queries-pred-bs3
+
+map                   	all	0.0853
+recall_4000           	all	0.8159
+
+auto_cano_queries-bs3
+
+map                   	all	0.1189
+recall_4000           	all	0.8410
+
+queries_auto_cano
+
+map                   	all	0.1355
+recall_4000           	all	0.8828
+
+queries_manu
+
+map                   	all	0.1687
+recall_4000           	all	0.9247
+
+##Document Retrieval@5000
+utterances
+
+map                   	all	0.0425
+recall_5000           	all	0.5397
+
+auto_queries-pred-bs3
+
+map                   	all	0.0853
+recall_5000           	all	0.8368
+
+auto_cano_queries-bs3
+
+map                   	all	0.1189
+recall_5000           	all	0.8494
+
+queries_auto_cano
+
+map                   	all	0.1355
+recall_5000           	all	0.8870
+
+queries_manu
+
+map                   	all	0.1687
+recall_5000           	all	0.9289
