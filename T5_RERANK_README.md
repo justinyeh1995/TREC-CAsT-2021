@@ -2,6 +2,10 @@
 ```sh
 gcloud compute --project=doctttttquery instances create my-vm --zone=us-central1-b --machine-type=n1-standard-4 --subnet=default --network-tier=PREMIUM --maintenance-policy=MIGRATE --service-account=230744092782-compute@developer.gserviceaccount.com --scopes=https://www.googleapis.com/auth/cloud-platform --image=debian-10-buster-v20210721 --image-project=debian-cloud --boot-disk-size=200GB --boot-disk-type=pd-standard --boot-disk-device-name=my-vm --reservation-affinity=any
 ```
+### Connect to VM
+```sh
+gcloud compute ssh --project=doctttttquery --zone=us-central1-b my-vm
+```
 ### T5 Installation
 
 To install the T5 package, simply run:
