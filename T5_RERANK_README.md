@@ -6,7 +6,7 @@ gcloud compute --project=doctttttquery instances create my-vm --zone=us-central1
 
 ## Start a TPU.
 ```
-ctpu up --name=my_tpu --project=gin-project-261821 --zone=us-central1-b \
+ctpu up --name=my-tpu --project=doctttttquery --zone=us-central1-b \
     --tpu-size=v3-8  --tpu-only  --tf-version=1.15  --noconf  \
     --preemptible
 
