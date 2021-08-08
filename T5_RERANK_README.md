@@ -1,13 +1,43 @@
-```
 ## Start new VM in Google Cloud
-
+```sh
 gcloud compute --project=doctttttquery instances create my-vm --zone=us-central1-b --machine-type=n1-standard-4 --subnet=default --network-tier=PREMIUM --maintenance-policy=MIGRATE --service-account=230744092782-compute@developer.gserviceaccount.com --scopes=https://www.googleapis.com/auth/cloud-platform --image=debian-10-buster-v20210721 --image-project=debian-cloud --boot-disk-size=200GB --boot-disk-type=pd-standard --boot-disk-device-name=my-vm --reservation-affinity=any
+```
+### Installation
+
+To install the T5 package, simply run:
+
+```sh
+pip install t5[gcp]
+```
+
+### Setting up TPUs on GCP
+
+You will first need to launch a Virtual Machine (VM) on Google Cloud. Details about launching the VM can be found at the [Google Cloud Documentation](https://cloud.google.com/compute/docs/instances/create-start-instance).
+
+In order to run training or eval on Cloud TPUs, you must set up the following variables based on your project, zone and GCS bucket appropriately. Please refer to the [Cloud TPU Quickstart](https://cloud.google.com/tpu/docs/quickstart) guide for more details.
+
+```sh
+export PROJECT=your_project_name
+export ZONE=your_project_zone
+export BUCKET=gs://yourbucket/
+export TPU_NAME=t5-tpu
+export TPU_SIZE=v3-8
+export DATA_DIR="${BUCKET}/your_data_dir"
+export MODEL_DIR="${BUCKET}/your_model_dir"
+```
+
+Please use the following command to create a TPU device in the Cloud VM.
+
+```sh
+ctpu up --name=$TPU_NAME --project=$PROJECT --zone=$ZONE --tpu-size=$TPU_SIZE \
+        --tpu-only --noconf
 ```
 
 ## Start a TPU.
-```
+
+```sh
 ctpu up --name=my-tpu --project=doctttttquery --zone=us-central1-b \
-    --tpu-size=v3-8  --tpu-only  --tf-version=1.15  --noconf  \
+    --tpu-size=v3-8  --tpu-only  --tf-version=2.5.0  --noconf  \
     --preemptible
 
 ```
