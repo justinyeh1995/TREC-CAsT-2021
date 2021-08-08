@@ -1,8 +1,8 @@
-## Start new VM in Google Cloud
+### Start new VM in Google Cloud
 ```sh
 gcloud compute --project=doctttttquery instances create my-vm --zone=us-central1-b --machine-type=n1-standard-4 --subnet=default --network-tier=PREMIUM --maintenance-policy=MIGRATE --service-account=230744092782-compute@developer.gserviceaccount.com --scopes=https://www.googleapis.com/auth/cloud-platform --image=debian-10-buster-v20210721 --image-project=debian-cloud --boot-disk-size=200GB --boot-disk-type=pd-standard --boot-disk-device-name=my-vm --reservation-affinity=any
 ```
-### Installation
+### T5 Installation
 
 To install the T5 package, simply run:
 
@@ -33,7 +33,7 @@ ctpu up --name=$TPU_NAME --project=$PROJECT --zone=$ZONE --tpu-size=$TPU_SIZE \
         --tpu-only --noconf
 ```
 
-## Start a TPU.
+### Start a TPU.
 
 ```sh
 ctpu up --name=my-tpu --project=doctttttquery --zone=us-central1-b \
@@ -42,7 +42,7 @@ ctpu up --name=my-tpu --project=doctttttquery --zone=us-central1-b \
 
 ```
 
-## Install T5
+### Install T5
 
 ```
 sudo apt-get install gcc --yes
@@ -60,7 +60,7 @@ conda install -c conda-forge jsonnet
 pip install t5[gcp]
 ```
 
-## IMPORTANT HACK:
+### IMPORTANT HACK:
 We hack the t5 model to output probabilities instead of tokens.
 
 Once installation is complete, the files 'transformer.py' and 'utils.py' should be put in:
@@ -86,7 +86,7 @@ To create training and dev data for Robust04, you can modify the files that crea
 `create_msmarco_tsv_training_pairs_t5_reranker.py` and `create_msmarco_tsv_dev_pairs_t5_reranker.py`.
 
 
-# Start training
+## Start training
 We can now start training. 
 
 Note 1: Remember to change `your_bucket` accordingly.
@@ -114,7 +114,7 @@ nohup t5_mesh_transformer  \
   >> out.log 2>&1 &
 
 
-# Inference
+## Inference
 We will now predict a score for each query-doc pair.
 Note 1: The input file here is a txt with one query + document per line. The output will be the predicted label ("true" or "false") and the probability of being true (i.e., the document being relevant to the query).
 Note 2: Remember to split the input file into files of 1M lines. Otherwise, TensorFlow will not be able to load it entirely into memory.
