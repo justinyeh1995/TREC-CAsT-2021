@@ -1,11 +1,47 @@
+### Setting up TPUs on GCP
+
+You will first need to launch a Virtual Machine (VM) on Google Cloud. Details about launching the VM can be found at the [Google Cloud Documentation](https://cloud.google.com/compute/docs/instances/create-start-instance).
+
+In order to run training or eval on Cloud TPUs, you must set up the following variables based on your project, zone and GCS bucket appropriately. Please refer to the [Cloud TPU Quickstart](https://cloud.google.com/tpu/docs/quickstart) guide for more details.
+
+## Current Worflow
 ### Start new VM in Google Cloud
+1. Create a project on Google Cloud
+2. Create a variable for your project's ID.
 ```sh
-gcloud compute --project=doctttttquery instances create my-vm --zone=us-central1-b --machine-type=n1-standard-4 --subnet=default --network-tier=PREMIUM --maintenance-policy=MIGRATE --service-account=230744092782-compute@developer.gserviceaccount.com --scopes=https://www.googleapis.com/auth/cloud-platform --image=debian-10-buster-v20210721 --image-project=debian-cloud --boot-disk-size=200GB --boot-disk-type=pd-standard --boot-disk-device-name=my-vm --reservation-affinity=any
+export PROJECT_ID=project-id
 ```
-### Connect to VM
+3. Configure gcloud command-line tool to use the project where you want to create Cloud TPU.
 ```sh
-gcloud compute ssh --project=doctttttquery --zone=us-central1-b my-vm
+gcloud config set project $PROJECT_ID
 ```
+4. Create a Cloud Storage bucket using the following command:
+```sh
+gsutil mb -p ${PROJECT_ID} -c standard -l us-central1 -b on gs://bucket-name
+```
+5. Launch a Compute Engine VM and Cloud TPU using the gcloud command.
+```sh
+gcloud compute tpus execution-groups create \
+ --name=doctttttquery-tpu \
+ --zone=us-central1-a \
+ --tf-version=2.5.0 \
+ --machine-type=n1-standard-1 \
+ --accelerator-type=v3-8
+```
+### Connect to VM after creations
+```sh
+gcloud compute ssh doctttttquery-tpu --zone=us-central1-a
+```
+### Leave VM
+```sh
+(vm):exit
+```
+### Transfer files from local to google cloud vm
+```sh
+
+gcloud compute scp /tmp2/cwlin/trec-2021/doc-tsv/wapo/TREC_Washington_Post_collection.v4.jl.trecweb justinyeh1995@doctttttquery-tpu:~
+```
+
 ### T5 Installation
 
 To install the T5 package, simply run:
@@ -13,13 +49,11 @@ To install the T5 package, simply run:
 ```sh
 pip install t5[gcp]
 ```
-
-### Setting up TPUs on GCP
-
-You will first need to launch a Virtual Machine (VM) on Google Cloud. Details about launching the VM can be found at the [Google Cloud Documentation](https://cloud.google.com/compute/docs/instances/create-start-instance).
-
-In order to run training or eval on Cloud TPUs, you must set up the following variables based on your project, zone and GCS bucket appropriately. Please refer to the [Cloud TPU Quickstart](https://cloud.google.com/tpu/docs/quickstart) guide for more details.
-
+---
+## Old Workflow - Start new VM in Google Cloud
+```sh
+gcloud compute --project=doctttttquery instances create my-vm --zone=us-central1-b --machine-type=n1-standard-4 --subnet=default --network-tier=PREMIUM --maintenance-policy=MIGRATE --service-account=230744092782-compute@developer.gserviceaccount.com --scopes=https://www.googleapis.com/auth/cloud-platform --image=debian-10-buster-v20210721 --image-project=debian-cloud --boot-disk-size=200GB --boot-disk-type=pd-standard --boot-disk-device-name=my-vm --reservation-affinity=any
+```
 ```sh
 export PROJECT=your_project_name
 export ZONE=your_project_zone
