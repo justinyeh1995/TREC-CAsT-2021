@@ -54,6 +54,11 @@ gcloud compute instances set-machine-type doctttttquery-tpu \
     --machine-type n1-highmem-8
 ```
 #### Transfer files from local to google cloud vm
+a. first you need to login for once
+```sh
+gcloud auth login
+```
+b. Transfer files
 ```sh
 
 gcloud compute scp /tmp2/cwlin/trec-2021/doc-tsv/wapo/TREC_Washington_Post_collection.v4.jl.trecweb justinyeh1995@doctttttquery-tpu:~
