@@ -36,6 +36,19 @@ gcloud compute ssh doctttttquery-tpu --zone=us-central1-a
 ```sh
 (vm):exit
 ```
+#### Stop a VM
+```sh
+gcloud compute instances stop doctttttquery-tpu
+```
+#### Start a VM
+```sh
+gcloud compute instances start doctttttquery-tpu
+```
+#### Change [Machine Type](https://cloud.google.com/compute/docs/instances/changing-machine-type-of-stopped-instance)
+```sh
+gcloud compute instances set-machine-type doctttttquery-tpu \
+    --machine-type n1-highmem-8
+```
 #### Transfer files from local to google cloud vm
 ```sh
 
