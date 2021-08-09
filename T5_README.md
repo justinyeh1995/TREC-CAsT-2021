@@ -6,10 +6,14 @@ In order to run training or eval on Cloud TPUs, you must set up the following va
 
 ### Current Worflow
 #### Start new VM in Google Cloud
-1. Create a project on Google Cloud
-2. Create a variable for your project's ID.
+0. Create a project on Google Cloud
+1. Create a variable for your project's ID.
 ```sh
 export PROJECT_ID=project-id
+```
+2. Create a Cloud TPU Service Account for your project(Take a while to activate your IAM status).
+```sh
+gcloud beta services identity create --service tpu.googleapis.com --project $PROJECT_ID
 ```
 3. Configure gcloud command-line tool to use the project where you want to create Cloud TPU.
 ```sh
@@ -17,7 +21,7 @@ gcloud config set project $PROJECT_ID
 ```
 4. Create a Cloud Storage bucket using the following command:
 ```sh
-gsutil mb -p ${PROJECT_ID} -c standard -l us-central1 -b on gs://bucket-name
+gsutil mb -p ${PROJECT_ID} -c standard -l us-central1 -b on gs://your-bucket-name
 ```
 5. Launch a Compute Engine VM and Cloud TPU using the gcloud command.
 ```sh
@@ -25,7 +29,7 @@ gcloud compute tpus execution-groups create \
  --name=doctttttquery-tpu \
  --zone=us-central1-a \
  --tf-version=2.5.0 \
- --machine-type=n1-standard-1 \
+ --machine-type=n1-highmem-8 \
  --accelerator-type=v3-8
 ```
 #### Connect to VM after creations
