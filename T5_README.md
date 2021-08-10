@@ -48,7 +48,7 @@ gcloud compute instances stop doctttttquery-tpu
 ```sh
 gcloud compute instances start doctttttquery-tpu
 ```
-#### Change [Machine Type](https://cloud.google.com/compute/docs/instances/changing-machine-type-of-stopped-instance)
+#### Change [Machine Type](https://zh.wikipedia.org/wiki/Google%E8%AE%A1%E7%AE%97%E5%BC%95%E6%93%8E)
 ```sh
 gcloud compute instances set-machine-type doctttttquery-tpu \
     --machine-type n1-highmem-8
